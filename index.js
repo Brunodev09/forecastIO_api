@@ -22,7 +22,7 @@ axios.get(geocodeURL).then((response) => {
     let lat = response.data.results[0].locations[0].latLng.lat;
     let lng = response.data.results[0].locations[0].latLng.lng;
     let tempURL = `https://api.forecast.io/forecast/4a04d1c42fd9d32c97a2c291a32d5e2d/${lat},${lng}`;
-    console.log(lat,lng);
+
     return axios.get(tempURL, {params: {units: 'si'}});
 }).then((response) => {
     let temperature = response.data.currently.temperature;
